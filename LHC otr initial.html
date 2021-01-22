@@ -968,6 +968,7 @@
       .td47 {
         border-left: #000000 1px solid;
         border-right: #000000 1px solid;
+        border-bottom: #000000 1px solid;
         padding: 0px;
         margin: 0px;
         width: 312px;
@@ -975,6 +976,7 @@
       }
       .td48 {
         border-right: #000000 1px solid;
+        border-bottom: #000000 1px solid;
         padding: 0px;
         margin: 0px;
         width: 77px;
@@ -982,6 +984,7 @@
       }
       .td49 {
         border-right: #000000 1px solid;
+        border-bottom: #000000 1px solid;
         padding: 0px;
         margin: 0px;
         width: 334px;
@@ -1720,7 +1723,7 @@
         height: 46px;
       }
       .tr27 {
-        height: 36px;
+        height: 0px;
       }
       .tr28 {
         height: 16px;
@@ -1799,9 +1802,9 @@
       .left_input {
         width: 240px;
       }
-	  .right_input{
-		  width: 295px;
-	  }
+      .right_input {
+        width: 295px;
+      }
       .long_input {
         width: 645px;
       }
@@ -1824,30 +1827,61 @@
       #input_zip {
         width: 94px;
       }
-	  #input_state{
-		width: 90px;
-	  }
-	  #input_primarycode {
-		width: 527px;
-	  }
-	  #input_comorbidcode{
-		  width: 462px;
-	  }
-	  #input_dischargedate{
-		  margin-top: 5px;
-	  }
-	  #input_explain{
-		  width: 258px;
-	  }
-	  #input_assessment{
-		  width: 125px;
-	  }
-	  #input_finding1,#input_finding2,#input_finding3,#input_finding4,#input_finding5{
-		  width: 97%;
-	  }
-	  #input_recentplan{
-		  margin-left: 10px;
-	  }
+      #input_state {
+        width: 90px;
+      }
+      #input_primarycode {
+        width: 527px;
+      }
+      #input_comorbidcode {
+        width: 462px;
+      }
+      #input_dischargedate {
+        margin-top: 5px;
+      }
+      #input_explain {
+        width: 258px;
+      }
+      #input_assessment {
+        width: 125px;
+      }
+      #input_finding1,
+      #input_finding2,
+      #input_finding3,
+      #input_finding4,
+      #input_finding5 {
+        width: 97%;
+      }
+      #input_recentplan {
+        margin-left: 10px;
+      }
+      #input_requested,
+      #input_frequency,
+      #input_intensity {
+        width: 93%;
+        height: 100%;
+      }
+      #input_requested1,
+      #input_frequency1,
+      #input_intensity1 {
+        width: 93%;
+        height: 100%;
+      }
+      #input_additional {
+        margin-top: 13px;
+        width: 680px;
+        height: 250px;
+      }
+      #input_requeststart {
+        height: 40px;
+      }
+      #input_requeststart1 {
+        height: 50px;
+      }
+      .input_footer{
+        margin-left: 65px;
+        width: 290px;
+      }
     </style>
   </head>
 
@@ -2027,8 +2061,8 @@
             </td>
             <td colspan="3" class="tr7 td12">
               <input
-				type="text"
-				class="right_input"
+                type="text"
+                class="right_input"
                 id="input_securefax"
                 name="securefax"
                 value=""
@@ -2062,8 +2096,8 @@
             </td>
             <td colspan="3" class="tr0 td12">
               <input
-				type="text"
-				class="right_input"
+                type="text"
+                class="right_input"
                 id="input_agencytin"
                 name="agencytin"
                 value=""
@@ -2113,12 +2147,7 @@
               <p class="p10 ft11">Zip:</p>
             </td>
             <td class="tr0 td11">
-              <input
-                type="text"
-                id="input_zip"
-                name="zip"
-                value=""
-              />
+              <input type="text" id="input_zip" name="zip" value="" />
             </td>
           </tr>
           <tr>
@@ -2186,9 +2215,13 @@
         </div>
       </div>
       <div id="id1_3">
-        <p class="p0 ft11">Primary Diagnosis <nobr>ICD-10</nobr> Code: <input type="text" id="input_primarycode" name="primarycode"></p>
+        <p class="p0 ft11">
+          Primary Diagnosis <nobr>ICD-10</nobr> Code:
+          <input type="text" id="input_primarycode" name="primarycode" />
+        </p>
         <p class="p13 ft11">
-          <nobr>Co-morbid</nobr> Medical Diagnosis <nobr>ICD-10</nobr> Code: <input type="text" id="input_comorbidcode" name="comorbidcode">
+          <nobr>Co-morbid</nobr> Medical Diagnosis <nobr>ICD-10</nobr> Code:
+          <input type="text" id="input_comorbidcode" name="comorbidcode" />
         </p>
         <p class="p14 ft3">Discharge & Treatment Planning</p>
         <table cellpadding="0" cellspacing="0" class="t3">
@@ -2199,8 +2232,27 @@
                 services with the member?
               </p>
             </td>
-            <td class="tr9 td31"><p class="p6 ft11"><input type="radio" id="discharge_yes" name="discharge_question" checked> Yes</p></td>
-            <td class="tr9 td32"><p class="p6 ft11"><input type="radio" id="discharge_no"  name="discharge_question"> No</p></td>
+            <td class="tr9 td31">
+              <p class="p6 ft11">
+                <input
+                  type="radio"
+                  id="discharge_yes"
+                  name="discharge_question"
+                  checked
+                />
+                Yes
+              </p>
+            </td>
+            <td class="tr9 td32">
+              <p class="p6 ft11">
+                <input
+                  type="radio"
+                  id="discharge_no"
+                  name="discharge_question"
+                />
+                No
+              </p>
+            </td>
           </tr>
           <tr>
             <td class="tr10 td33"><p class="p6 ft13">&nbsp;</p></td>
@@ -2210,10 +2262,19 @@
           <tr>
             <td class="tr11 td30">
               <p class="p6 ft11">
-                Target discharge date from the requested services (MM/DD/YYYY): <input type="date" id="input_dischargedate" name="dischargedate">
+                Target discharge date from the requested services (MM/DD/YYYY):
+                <input
+                  type="date"
+                  id="input_dischargedate"
+                  name="dischargedate"
+                />
               </p>
             </td>
-            <td class="tr11 td31"><p class="p6 ft11"><input type="checkbox" id="dishargedate_check"> N/A</p></td>
+            <td class="tr11 td31">
+              <p class="p6 ft11">
+                <input type="checkbox" id="dishargedate_check" /> N/A
+              </p>
+            </td>
             <td class="tr11 td32"><p class="p6 ft9">&nbsp;</p></td>
           </tr>
           <tr>
@@ -2225,8 +2286,8 @@
             <td class="tr11 td30">
               <p class="p15 ft11">
                 If “<span class="ft4">No</span>” or “<span class="ft4">N/A</span
-				>” above, please explain:
-				<input type="text" id="input_explain" name="explain">
+                >” above, please explain:
+                <input type="text" id="input_explain" name="explain" />
               </p>
             </td>
             <td class="tr11 td31"><p class="p6 ft9">&nbsp;</p></td>
@@ -2244,8 +2305,27 @@
                 agreed to participate?
               </p>
             </td>
-            <td class="tr11 td31"><p class="p6 ft11"><input type="radio" id="treatment_yes" name="treatment_question" checked> Yes</p></td>
-            <td class="tr11 td32"><p class="p6 ft11"><input type="radio" id="treatment_no" name="treatment_question"> No</p></td>
+            <td class="tr11 td31">
+              <p class="p6 ft11">
+                <input
+                  type="radio"
+                  id="treatment_yes"
+                  name="treatment_question"
+                  checked
+                />
+                Yes
+              </p>
+            </td>
+            <td class="tr11 td32">
+              <p class="p6 ft11">
+                <input
+                  type="radio"
+                  id="treatment_no"
+                  name="treatment_question"
+                />
+                No
+              </p>
+            </td>
           </tr>
         </table>
         <table cellpadding="0" cellspacing="0" class="t4">
@@ -2280,8 +2360,8 @@
         <p class="p16 ft3">Assessment and Evaluation</p>
         <p class="p17 ft11">
           Date of the most recent Developmental/Comprehensive
-		  Evaluation/Functional Behavioral Assessment:
-		  <input type="text" id="input_assessment" name="assessment">
+          Evaluation/Functional Behavioral Assessment:
+          <input type="text" id="input_assessment" name="assessment" />
         </p>
         <p class="p18 ft2">
           Tip: The assessment’s findings should be reflected in the treatment
@@ -2311,83 +2391,98 @@
             <td class="tr5 td46"><p class="p6 ft8">&nbsp;</p></td>
           </tr>
           <tr>
-            <td class="tr14 td47"><p class="p21 ft4">Risk of Harm</p></td>
-            <td class="tr14 td48"><p class="p6 ft9"><input type="text" id="input_rating1" name="rating1"></p></td>
-            <td class="tr14 td49"><p class="p6 ft9"><input type="text" id="input_finding1" name="finding1"></p></td>
-          </tr>
-          <tr>
-            <td class="tr16 td47">
+            <td class="tr14 td47">
+              <p class="p21 ft4">Risk of Harm</p>
               <p class="p21 ft19">
                 SI/HI/Command AH, risky behaviors, impulsivity
               </p>
             </td>
-            <td class="tr16 td48"><p class="p6 ft9">&nbsp;</p> </td>
-            <td class="tr16 td49"><p class="p6 ft9">&nbsp;</p></td>
+            <td class="tr14 td48">
+              <textarea
+                type="text"
+                id="input_rating1"
+                name="rating1"
+              ></textarea>
+            </td>
+            <td class="tr14 td49">
+              <textarea
+                type="text"
+                id="input_finding1"
+                name="finding1"
+              ></textarea>
+            </td>
           </tr>
-          <tr>
-            <td class="tr17 td50"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr17 td51"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr17 td52"><p class="p6 ft9">&nbsp;</p></td>
-          </tr>
-          <tr>
+          <tr style="border: 1px">
             <td class="tr14 td47">
               <p class="p21 ft4">Impairment in Functional Status</p>
-            </td>
-            <td class="tr14 td48"><p class="p6 ft9"><input type="text" id="input_rating2" name="rating2"></p></td>
-            <td class="tr14 td49"><p class="p6 ft9"><input type="text" id="input_finding2" name="finding2"></p></td>
-          </tr>
-          <tr>
-            <td class="tr18 td47">
               <p class="p21 ft20">
                 <nobr>Self-care,</nobr> fulfilling daily life roles,
                 socialization and interpersonal
               </p>
-            </td>
-            <td class="tr18 td48"><p class="p6 ft21">&nbsp;</p></td>
-            <td class="tr18 td49"><p class="p6 ft21">&nbsp;</p></td>
-          </tr>
-          <tr>
-            <td class="tr16 td47">
               <p class="p21 ft19">deficits which is a change from baseline</p>
             </td>
-            <td class="tr16 td48"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr16 td49"><p class="p6 ft9">&nbsp;</p></td>
-          </tr>
-          <tr>
-            <td class="tr19 td50"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr19 td51"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr19 td52"><p class="p6 ft9">&nbsp;</p></td>
+            <td class="tr14 td48">
+              <textarea
+                type="text"
+                id="input_rating2"
+                name="rating2"
+              ></textarea>
+            </td>
+            <td class="tr14 td49">
+              <textarea
+                type="text"
+                id="input_finding2"
+                name="finding2"
+              ></textarea>
+            </td>
           </tr>
           <tr>
             <td class="tr14 td47">
               <p class="p21 ft4">Presence of <nobr>Co-Morbidity</nobr></p>
-            </td>
-            <td class="tr14 td48"><p class="p6 ft9"><input type="text" id="input_rating3" name="rating3"></p></td>
-            <td class="tr14 td49"><p class="p6 ft9"><input type="text" id="input_finding3" name="finding3"></p></td>
-          </tr>
-          <tr>
-            <td class="tr16 td47">
               <p class="p21 ft19">
                 <nobr>Co-occurring</nobr> physical health or substance abuse
                 conditions
               </p>
             </td>
-            <td class="tr16 td48"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr16 td49"><p class="p6 ft9">&nbsp;</p></td>
-          </tr>
-          <tr>
-            <td class="tr17 td50"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr17 td51"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr17 td52"><p class="p6 ft9">&nbsp;</p></td>
+            <td class="tr14 td48">
+              <textarea
+                type="text"
+                id="input_rating3"
+                name="rating3"
+              ></textarea>
+            </td>
+            <td class="tr14 td49">
+              <textarea
+                type="text"
+                id="input_finding3"
+                name="finding3"
+              ></textarea>
+            </td>
           </tr>
           <tr>
             <td class="tr14 td47">
               <p class="p21 ft4">Environmental Factors</p>
+              <p class="p21 ft20">
+                Degree of life stressors with ability to cope effectively and
+              </p>
+              <p class="p21 ft19">degree of support or lack thereof</p>
             </td>
-            <td class="tr14 td48"><p class="p6 ft9"><input type="text" id="input_rating4" name="rating4"></p></td>
-            <td class="tr14 td49"><p class="p6 ft9"><input type="text" id="input_finding4" name="finding4"></p></td>
+            <td class="tr14 td48">
+              <textarea
+                type="text"
+                id="input_rating4"
+                name="rating4"
+              ></textarea>
+            </td>
+            <td class="tr14 td49">
+              <textarea
+                type="text"
+                id="input_finding4"
+                name="finding4"
+              ></textarea>
+            </td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td class="tr18 td47">
               <p class="p21 ft20">
                 Degree of life stressors with ability to cope effectively and
@@ -2407,15 +2502,31 @@
             <td class="tr19 td50"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr19 td51"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr19 td52"><p class="p6 ft9">&nbsp;</p></td>
-          </tr>
+          </tr> -->
           <tr>
             <td class="tr14 td47">
               <p class="p21 ft4">Engagement and Recovery Status</p>
+              <p class="p21 ft20">
+                Member’s level of change and acceptance / responsibility
+              </p>
+              <p class="p23 ft19">of condition(s)</p>
             </td>
-            <td class="tr14 td48"><p class="p6 ft9"><input type="text" id="input_rating5" name="rating5"></p></td>
-            <td class="tr14 td49"><p class="p6 ft9"><input type="text" id="input_finding5" name="finding5"></p></td>
+            <td class="tr14 td48">
+              <textarea
+                type="text"
+                id="input_rating5"
+                name="rating5"
+              ></textarea>
+            </td>
+            <td class="tr14 td49">
+              <textarea
+                type="text"
+                id="input_finding5"
+                name="finding5"
+              ></textarea>
+            </td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td class="tr18 td47">
               <p class="p21 ft20">
                 Member’s level of change and acceptance / responsibility
@@ -2433,7 +2544,7 @@
             <td class="tr21 td50"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr21 td51"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr21 td52"><p class="p6 ft9">&nbsp;</p></td>
-          </tr>
+          </tr> -->
         </table>
         <p class="p19 ft3">Member Risk</p>
         <table cellpadding="0" cellspacing="0" class="t6">
@@ -2479,11 +2590,31 @@
           </tr>
           <tr>
             <td class="tr11 td71"><p class="p33 ft4">To Self:</p></td>
-            <td class="tr11 td72"><p class="p34 ft11"><input type="checkbox" id="check_none" name="none"></p></td>
-            <td class="tr11 td73"><p class="p34 ft11"><input type="checkbox" id="check_mild" name="mild"></p></td>
-            <td class="tr11 td74"><p class="p34 ft11"><input type="checkbox" id="check_moderate" name="moderate"></p></td>
-            <td class="tr11 td75"><p class="p34 ft11"><input type="checkbox" id="check_severe" name="severe"></p></td>
-            <td class="tr11 td76"><p class="p34 ft11"><input type="checkbox" id="check_assessed" name="assessed"></p></td>
+            <td class="tr11 td72">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_none" name="none" />
+              </p>
+            </td>
+            <td class="tr11 td73">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_mild" name="mild" />
+              </p>
+            </td>
+            <td class="tr11 td74">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_moderate" name="moderate" />
+              </p>
+            </td>
+            <td class="tr11 td75">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_severe" name="severe" />
+              </p>
+            </td>
+            <td class="tr11 td76">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_assessed" name="assessed" />
+              </p>
+            </td>
           </tr>
           <tr>
             <td class="tr22 td77"><p class="p6 ft25">&nbsp;</p></td>
@@ -2495,11 +2626,31 @@
           </tr>
           <tr>
             <td class="tr11 td71"><p class="p33 ft4">To Others:</p></td>
-            <td class="tr11 td72"><p class="p34 ft11"><input type="checkbox" id="check_none" name="none"></p></td>
-            <td class="tr11 td73"><p class="p34 ft11"><input type="checkbox" id="check_mild" name="mild"></p></td>
-            <td class="tr11 td74"><p class="p34 ft11"><input type="checkbox" id="check_moderate" name="moderate"></p></td>
-            <td class="tr11 td75"><p class="p34 ft11"><input type="checkbox" id="check_severe" name="severe"></p></td>
-            <td class="tr11 td76"><p class="p34 ft11"><input type="checkbox" id="check_assessed" name="assessed"></p></td>
+            <td class="tr11 td72">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_none" name="none" />
+              </p>
+            </td>
+            <td class="tr11 td73">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_mild" name="mild" />
+              </p>
+            </td>
+            <td class="tr11 td74">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_moderate" name="moderate" />
+              </p>
+            </td>
+            <td class="tr11 td75">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_severe" name="severe" />
+              </p>
+            </td>
+            <td class="tr11 td76">
+              <p class="p34 ft11">
+                <input type="checkbox" id="check_assessed" name="assessed" />
+              </p>
+            </td>
           </tr>
           <tr>
             <td class="tr10 td77"><p class="p6 ft13">&nbsp;</p></td>
@@ -2513,11 +2664,14 @@
         <p class="p35 ft3">Crisis Management / Safety Plan</p>
         <p class="p17 ft11">
           Does the member have a behavioral health crisis management or safety
-          plan in place? <input type="radio" id="safeplan_yes" name="safeplan"> Yes <input type="radio" id="safeplan_no" name="safeplan"> No <input type="radio" id="safeplan_unknown" name="safeplan"> Unknown
+          plan in place?
+          <input type="radio" id="safeplan_yes" name="safeplan" /> Yes
+          <input type="radio" id="safeplan_no" name="safeplan" /> No
+          <input type="radio" id="safeplan_unknown" name="safeplan" /> Unknown
         </p>
         <p class="p35 ft11">
-		  If yes, what is the date of the most recent plan? (MM/DD/YYYY):
-		  <input type="date" id="input_recentplan" name="recentplan">
+          If yes, what is the date of the most recent plan? (MM/DD/YYYY):
+          <input type="date" id="input_recentplan" name="recentplan" />
         </p>
         <table cellpadding="0" cellspacing="0" class="t7">
           <tr>
@@ -2555,8 +2709,9 @@
             <td class="tr20 td84"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr20 td85"><p class="p23 ft15">Frequency:</p></td>
             <td class="tr20 td86"><p class="p23 ft15">Intensity:</p></td>
-            <td class="tr20 td87"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr20 td88"><p class="p6 ft9">&nbsp;</p></td>
+            <td class="tr20 td88" style="border-left: solid 1px">
+              <p class="p6 ft9">&nbsp;</p>
+            </td>
             <td class="tr20 td89"><p class="p6 ft9">&nbsp;</p></td>
           </tr>
           <tr>
@@ -2566,8 +2721,7 @@
             <td class="tr20 td91"><p class="p23 ft26">SERVICE DATES</p></td>
             <td class="tr20 td92"><p class="p23 ft26">HOW OFTEN</p></td>
             <td class="tr20 td93"><p class="p23 ft26"># OF UNITS</p></td>
-            <td class="tr20 td94"><p class="p6 ft9">&nbsp;</p></td>
-            <td colspan="2" class="tr20 td92">
+            <td colspan="2" class="tr20 td92" style="border-left: solid 1px">
               <p class="p23 ft26">TOTAL UNITS</p>
             </td>
           </tr>
@@ -2575,8 +2729,7 @@
             <td class="tr16 td91"><p class="p23 ft15">MM/DD/YYYY</p></td>
             <td class="tr16 td92"><p class="p23 ft27">SEEN</p></td>
             <td class="tr16 td93"><p class="p23 ft27">PER VISIT</p></td>
-            <td class="tr16 td94"><p class="p6 ft24">&nbsp;</p></td>
-            <td colspan="2" class="tr16 td92">
+            <td colspan="2" class="tr16 td92" style="border-left: solid 1px">
               <p class="p23 ft27">REQUESTED</p>
             </td>
           </tr>
@@ -2585,8 +2738,9 @@
             <td class="tr5 td96"><p class="p6 ft8">&nbsp;</p></td>
             <td class="tr5 td97"><p class="p6 ft8">&nbsp;</p></td>
             <td class="tr5 td98"><p class="p6 ft8">&nbsp;</p></td>
-            <td class="tr5 td99"><p class="p6 ft8">&nbsp;</p></td>
-            <td class="tr5 td100"><p class="p6 ft8">&nbsp;</p></td>
+            <td class="tr5 td100" style="border-left: solid 1px">
+              <p class="p6 ft8">&nbsp;</p>
+            </td>
             <td class="tr5 td101"><p class="p6 ft8">&nbsp;</p></td>
           </tr>
           <tr>
@@ -2594,65 +2748,75 @@
               <p class="p21 ft26">Community Psychiatric Support Treatment</p>
             </td>
             <td class="tr1 td103"><p class="p4 ft6">Request Start:</p></td>
-            <td class="tr1 td104"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr1 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr1 td106"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr1 td107"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr1 td108"><p class="p6 ft9">&nbsp;</p></td>
+            <td rowspan="6" class="tr1 td104" style="vertical-align: top">
+              <textarea
+                type="text"
+                id="input_frequency"
+                name="frequency"
+              ></textarea>
+            </td>
+            <td rowspan="6" class="tr1 td105" style="vertical-align: top">
+              <textarea
+                type="text"
+                id="input_intensity"
+                name="intensity"
+              ></textarea>
+            </td>
+            <td
+              rowspan="6"
+              colspan="2"
+              class="tr1 td108"
+              style="vertical-align: top"
+            >
+              <textarea
+                type="text"
+                id="input_requested"
+                name="requested"
+              ></textarea>
+            </td>
           </tr>
           <tr>
             <td class="tr1 td102">
-              <p class="p20 ft6"><span class="ft5">□ </span>H0036 HO/HN/HM</p>
+              <p class="p20 ft6"><span class="ft5"><input type="checkbox" id="check_hohn" name="hohn"> </span>H0036 HO/HN/HM</p>
             </td>
-            <td class="tr1 td103"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr1 td104"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr1 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr1 td106"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr1 td107"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr1 td108"><p class="p6 ft9">&nbsp;</p></td>
+            <td
+              rowspan="2"
+              class="tr1 td103"
+              style="vertical-align: top; border-bottom: solid 1px"
+            >
+              <p class="p6 ft9">
+                <input
+                  type="text"
+                  id="input_requeststart"
+                  name="requeststart"
+                />
+              </p>
+            </td>
           </tr>
           <tr>
             <td class="tr24 td102">
               <p class="p20 ft6">
-                <span class="ft5">□ </span>H0036 TG/U8 (PSR) – Permanent
+                <span class="ft5"><input type="checkbox" id="check_tg" name="tg"> </span>H0036 TG/U8 (PSR) – Permanent
                 Supportive Housing
               </p>
             </td>
-            <td class="tr4 td109"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td104"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td106"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td107"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td108"><p class="p6 ft9">&nbsp;</p></td>
+            <!-- <td class="tr4 td109"><p class="p6 ft9">&nbsp;</p></td> -->
           </tr>
           <tr>
             <td class="tr24 td102"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr24 td103"><p class="p4 ft6">Request End:</p></td>
-            <td class="tr24 td104"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td106"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td107"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td108"><p class="p6 ft9">&nbsp;</p></td>
           </tr>
           <tr>
             <td class="tr16 td102"><p class="p6 ft24">&nbsp;</p></td>
             <td class="tr16 td103">
               <p class="p4 ft28">(Standard: 60 days)</p>
             </td>
-            <td class="tr16 td104"><p class="p6 ft24">&nbsp;</p></td>
-            <td class="tr16 td105"><p class="p6 ft24">&nbsp;</p></td>
-            <td class="tr16 td106"><p class="p6 ft24">&nbsp;</p></td>
-            <td class="tr16 td107"><p class="p6 ft24">&nbsp;</p></td>
-            <td class="tr16 td108"><p class="p6 ft24">&nbsp;</p></td>
           </tr>
           <tr>
             <td class="tr23 td110"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr23 td109"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr23 td111"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr23 td112"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr23 td113"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr23 td114"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr23 td115"><p class="p6 ft9">&nbsp;</p></td>
+            <td class="tr23 td109">
+              <input type="text" id="input_requestend" name="requestend" />
+            </td>
           </tr>
           <tr>
             <td class="tr24 td102">
@@ -2661,102 +2825,138 @@
               </p>
             </td>
             <td class="tr24 td103"><p class="p4 ft6">Request Start:</p></td>
-            <td class="tr24 td104"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td106"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td107"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td108"><p class="p6 ft9">&nbsp;</p></td>
+            <td
+              rowspan="9"
+              class="tr15 td104"
+              style="
+                vertical-align: top;
+                border-bottom: solid 1px;
+                border-right: solid 1px;
+              "
+            >
+              <textarea name="frequency1" id="input_frequency1"></textarea>
+            </td>
+            <td
+              rowspan="9"
+              class="tr15 td105"
+              style="
+                vertical-align: top;
+                border-bottom: solid 1px;
+                border-right: solid 1px;
+              "
+            >
+              <textarea name="intensity1" id="input_intensity1"></textarea>
+            </td>
+            <td
+              rowspan="9"
+              colspan="2"
+              class="tr15 td108"
+              style="
+                vertical-align: top;
+                border-bottom: solid 1px;
+                border-right: solid 1px;
+              "
+            >
+              <textarea name="requested1" id="input_requested1"></textarea>
+            </td>
           </tr>
           <tr>
             <td class="tr15 td102">
               <p class="p21 ft26">Office or Community</p>
             </td>
-            <td class="tr15 td103"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr15 td104"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr15 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr15 td106"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr15 td107"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr15 td108"><p class="p6 ft9">&nbsp;</p></td>
+            <td rowspan="2" class="tr15 td103" style="vertical-align: top">
+              <input
+                type="text"
+                id="input_requeststart1"
+                name="requeststart1"
+              />
+            </td>
           </tr>
           <tr>
             <td class="tr24 td102">
               <p class="p20 ft6">
-                <span class="ft5">□ </span>H2017 HA/HQ child/adolescent program
+                <span class="ft5"><input type="checkbox" id="check_hahq" name="hahq"> </span>H2017 HA/HQ child/adolescent program
               </p>
             </td>
-            <td class="tr24 td103"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td104"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td106"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td107"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr24 td108"><p class="p6 ft9">&nbsp;</p></td>
+            <!-- <td class="tr24 td103"><p class="p6 ft9">&nbsp;</p></td> -->
+            <!-- <td class="tr24 td104"><p class="p6 ft9">&nbsp;</p></td>
+            <td class="tr24 td105"><p class="p6 ft9">&nbsp;</p></td> -->
+            <!-- <td class="tr24 td106"><p class="p6 ft9">&nbsp;</p></td> -->
+            <!-- <td class="tr24 td107"><p class="p6 ft9">&nbsp;</p></td>
+            <td class="tr24 td108"><p class="p6 ft9">&nbsp;</p></td> -->
           </tr>
           <tr>
             <td rowspan="2" class="tr4 td102">
               <p class="p20 ft6">
-                <span class="ft5">□ </span>H2017 HB/HQ adult program,
+                <span class="ft5"><input type="checkbox" id="check_hbhq" name="hbhq"> </span>H2017 HB/HQ adult program,
                 <nobr>non-geriatric</nobr>
               </p>
             </td>
-            <td class="tr22 td109"><p class="p6 ft25">&nbsp;</p></td>
+            <!-- <td class="tr22 td109"><p class="p6 ft25">&nbsp;</p></td>
             <td class="tr10 td104"><p class="p6 ft13">&nbsp;</p></td>
-            <td class="tr10 td105"><p class="p6 ft13">&nbsp;</p></td>
-            <td class="tr10 td106"><p class="p6 ft13">&nbsp;</p></td>
-            <td class="tr10 td107"><p class="p6 ft13">&nbsp;</p></td>
-            <td class="tr10 td108"><p class="p6 ft13">&nbsp;</p></td>
+            <td class="tr10 td105"><p class="p6 ft13">&nbsp;</p></td> -->
+            <!-- <td class="tr10 td106"><p class="p6 ft13">&nbsp;</p></td> -->
+            <!-- <td class="tr10 td107"><p class="p6 ft13">&nbsp;</p></td>
+            <td class="tr10 td108"><p class="p6 ft13">&nbsp;</p></td> -->
           </tr>
           <tr>
             <td rowspan="2" class="tr25 td103">
               <p class="p4 ft6">Request End:</p>
             </td>
-            <td class="tr13 td104"><p class="p6 ft22">&nbsp;</p></td>
-            <td class="tr13 td105"><p class="p6 ft22">&nbsp;</p></td>
-            <td class="tr13 td106"><p class="p6 ft22">&nbsp;</p></td>
-            <td class="tr13 td107"><p class="p6 ft22">&nbsp;</p></td>
-            <td class="tr13 td108"><p class="p6 ft22">&nbsp;</p></td>
+            <!-- <td class="tr13 td104"><p class="p6 ft22">&nbsp;</p></td>
+            <td class="tr13 td105"><p class="p6 ft22">&nbsp;</p></td> -->
+            <!-- <td class="tr13 td106"><p class="p6 ft22">&nbsp;</p></td> -->
+            <!-- <td class="tr13 td107"><p class="p6 ft22">&nbsp;</p></td>
+            <td class="tr13 td108"><p class="p6 ft22">&nbsp;</p></td> -->
           </tr>
           <tr>
             <td rowspan="2" class="tr4 td102">
-              <p class="p20 ft6"><span class="ft5">□ </span>H2017 TG (PSR)</p>
+              <p class="p20 ft6"><span class="ft5"><input type="checkbox" id="check_tgpsr" name="tgpsr"> </span>H2017 TG (PSR)</p>
             </td>
-            <td class="tr22 td104"><p class="p6 ft25">&nbsp;</p></td>
-            <td class="tr22 td105"><p class="p6 ft25">&nbsp;</p></td>
-            <td class="tr22 td106"><p class="p6 ft25">&nbsp;</p></td>
-            <td class="tr22 td107"><p class="p6 ft25">&nbsp;</p></td>
-            <td class="tr22 td108"><p class="p6 ft25">&nbsp;</p></td>
+            <!-- <td class="tr22 td104"><p class="p6 ft25">&nbsp;</p></td>
+            <td class="tr22 td105"><p class="p6 ft25">&nbsp;</p></td> -->
+            <!-- <td class="tr22 td106"><p class="p6 ft25">&nbsp;</p></td> -->
+            <!-- <td class="tr22 td107"><p class="p6 ft25">&nbsp;</p></td>
+            <td class="tr22 td108"><p class="p6 ft25">&nbsp;</p></td> -->
           </tr>
           <tr>
             <td class="tr16 td103">
               <p class="p4 ft28">(Standard: 60 days)</p>
             </td>
-            <td class="tr16 td104"><p class="p6 ft24">&nbsp;</p></td>
-            <td class="tr16 td105"><p class="p6 ft24">&nbsp;</p></td>
-            <td class="tr16 td106"><p class="p6 ft24">&nbsp;</p></td>
-            <td class="tr16 td107"><p class="p6 ft24">&nbsp;</p></td>
-            <td class="tr16 td108"><p class="p6 ft24">&nbsp;</p></td>
+            <!-- <td class="tr16 td104"><p class="p6 ft24">&nbsp;</p></td>
+            <td class="tr16 td105"><p class="p6 ft24">&nbsp;</p></td> -->
+            <!-- <td class="tr16 td106"><p class="p6 ft24">&nbsp;</p></td> -->
+            <!-- <td class="tr16 td107"><p class="p6 ft24">&nbsp;</p></td>
+            <td class="tr16 td108"><p class="p6 ft24">&nbsp;</p></td> -->
           </tr>
           <tr>
             <td class="tr4 td102">
               <p class="p20 ft6">
-                <span class="ft5">□ </span>H2017 TG/U8 (PSR) – Permanent
+                <span class="ft5"><input type="checkbox" id="check_tgu" name="tgu"> </span>H2017 TG/U8 (PSR) – Permanent
                 Supportive Housing
               </p>
             </td>
-            <td class="tr4 td103"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr4 td104"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr4 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr4 td106"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr4 td107"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr4 td108"><p class="p6 ft9">&nbsp;</p></td>
+            <td
+              rowspan="2"
+              class="tr4 td103"
+              style="vertical-align: top; border-bottom: solid 1px"
+            >
+              <input type="text" id="input_requestend1" name="requestend1" />
+            </td>
+            <!-- <td class="tr4 td104"><p class="p6 ft9">&nbsp;</p></td>
+            <td class="tr4 td105"><p class="p6 ft9">&nbsp;</p></td> -->
+            <!-- <td class="tr4 td106"><p class="p6 ft9">&nbsp;</p></td> -->
+            <!-- <td class="tr4 td107"><p class="p6 ft9">&nbsp;</p></td>
+            <td class="tr4 td108"><p class="p6 ft9">&nbsp;</p></td> -->
           </tr>
           <tr>
             <td class="tr18 td110"><p class="p6 ft21">&nbsp;</p></td>
-            <td class="tr18 td109"><p class="p6 ft21">&nbsp;</p></td>
-            <td class="tr18 td111"><p class="p6 ft21">&nbsp;</p></td>
-            <td class="tr18 td112"><p class="p6 ft21">&nbsp;</p></td>
-            <td class="tr18 td113"><p class="p6 ft21">&nbsp;</p></td>
-            <td class="tr18 td114"><p class="p6 ft21">&nbsp;</p></td>
-            <td class="tr18 td115"><p class="p6 ft21">&nbsp;</p></td>
+            <!-- <td class="tr18 td109"><p class="p6 ft21">&nbsp;</p></td> -->
+            <!-- <td class="tr18 td111"><p class="p6 ft21">&nbsp;</p></td>
+            <td class="tr18 td112"><p class="p6 ft21">&nbsp;</p></td> -->
+            <!-- <td class="tr18 td113"><p class="p6 ft21">&nbsp;</p></td> -->
+            <!-- <td class="tr18 td114"><p class="p6 ft21">&nbsp;</p></td>
+            <td class="tr18 td115"><p class="p6 ft21">&nbsp;</p></td> -->
           </tr>
           <tr>
             <td colspan="3" class="tr14 td116">
@@ -2766,7 +2966,7 @@
               </p>
             </td>
             <td class="tr14 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr14 td117"><p class="p6 ft9">&nbsp;</p></td>
+            <!-- <td class="tr14 td117"><p class="p6 ft9">&nbsp;</p></td> -->
             <td class="tr14 td107"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr14 td118"><p class="p6 ft9">&nbsp;</p></td>
           </tr>
@@ -2777,7 +2977,7 @@
             <td class="tr26 td120"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr26 td121"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr26 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr26 td117"><p class="p6 ft9">&nbsp;</p></td>
+            <!-- <td class="tr26 td117"><p class="p6 ft9">&nbsp;</p></td> -->
             <td class="tr26 td107"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr26 td118"><p class="p6 ft9">&nbsp;</p></td>
           </tr>
@@ -2788,8 +2988,27 @@
                 (e.g., individual/family/group psychotherapy,
               </p>
             </td>
-            <td colspan="2" class="tr1 td31"><p class="p6 ft11">□ Yes</p></td>
-            <td class="tr1 td118"><p class="p6 ft11">□ No</p></td>
+            <td colspan="1" class="tr1 td31">
+              <p class="p6 ft11">
+                <input
+                  type="radio"
+                  id="servicequestion_yes"
+                  name="servicequestion"
+                  checked
+                />
+                Yes
+              </p>
+            </td>
+            <td class="tr1 td118">
+              <p class="p6 ft11">
+                <input
+                  type="radio"
+                  id="servicequestion_no"
+                  name="servicequestion"
+                />
+                No
+              </p>
+            </td>
           </tr>
           <tr>
             <td colspan="4" class="tr25 td122">
@@ -2798,13 +3017,13 @@
                 alone inadequate in treating the diagnosis?
               </p>
             </td>
-            <td class="tr25 td117"><p class="p6 ft9">&nbsp;</p></td>
+            <!-- <td class="tr25 td117"><p class="p6 ft9">&nbsp;</p></td> -->
             <td class="tr25 td107"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr25 td118"><p class="p6 ft9">&nbsp;</p></td>
           </tr>
           <tr>
             <td colspan="4" class="tr27 td123"><p class="p6 ft9">&nbsp;</p></td>
-            <td colspan="2" class="tr27 td34"><p class="p6 ft9">&nbsp;</p></td>
+            <td colspan="1" class="tr27 td34"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr27 td124"><p class="p6 ft9">&nbsp;</p></td>
           </tr>
           <tr>
@@ -2814,8 +3033,27 @@
                 the Homebuilder’s consultant
               </p>
             </td>
-            <td colspan="2" class="tr14 td31"><p class="p6 ft11">□ Yes</p></td>
-            <td class="tr14 td118"><p class="p6 ft11">□ No</p></td>
+            <td colspan="1" class="tr14 td31">
+              <p class="p6 ft11">
+                <input
+                  type="radio"
+                  id="servicequestion1_yes"
+                  name="servicequestion1"
+                  checked
+                />
+                Yes
+              </p>
+            </td>
+            <td class="tr14 td118">
+              <p class="p6 ft11">
+                <input
+                  type="radio"
+                  id="servicequestion1_yes"
+                  name="servicequestion1"
+                />
+                No
+              </p>
+            </td>
           </tr>
           <tr>
             <td class="tr15 td119">
@@ -2826,7 +3064,16 @@
             <td class="tr15 td120"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr15 td121"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr15 td105"><p class="p6 ft9">&nbsp;</p></td>
-            <td colspan="2" class="tr15 td31"><p class="p6 ft11">□ N/A</p></td>
+            <td colspan="1" class="tr15 td31">
+              <p class="p6 ft11">
+                <input
+                  type="radio"
+                  id="servicequestion1_na"
+                  name="servicequestion1"
+                />
+                N/A
+              </p>
+            </td>
             <td class="tr15 td118"><p class="p6 ft9">&nbsp;</p></td>
           </tr>
         </table>
@@ -2842,19 +3089,59 @@
           </tr>
           <tr>
             <td class="tr28 td126">
-              <p class="p20 ft11"><span class="ft30">□ </span>Outpatient</p>
+              <p class="p20 ft11">
+                <span class="ft30"
+                  ><input
+                    type="checkbox"
+                    id="check_location1"
+                    name="location1"
+                  /> </span
+                >Outpatient
+              </p>
             </td>
             <td class="tr28 td13">
-              <p class="p6 ft11"><span class="ft30">□ </span>School site</p>
+              <p class="p6 ft11">
+                <span class="ft30"
+                  ><input
+                    type="checkbox"
+                    id="check_location2"
+                    name="location2"
+                  /> </span
+                >School site
+              </p>
             </td>
             <td class="tr28 td126">
-              <p class="p6 ft11"><span class="ft30">□ </span>Community</p>
+              <p class="p6 ft11">
+                <span class="ft30"
+                  ><input
+                    type="checkbox"
+                    id="check_location3"
+                    name="location3"
+                  /> </span
+                >Community
+              </p>
             </td>
             <td class="tr28 td127">
-              <p class="p6 ft11"><span class="ft30">□ </span>General</p>
+              <p class="p6 ft11">
+                <span class="ft30"
+                  ><input
+                    type="checkbox"
+                    id="check_location4"
+                    name="location4"
+                  /> </span
+                >General
+              </p>
             </td>
             <td class="tr28 td27">
-              <p class="p6 ft11"><span class="ft30">□ </span>Member’s</p>
+              <p class="p6 ft11">
+                <span class="ft30"
+                  ><input
+                    type="checkbox"
+                    id="check_location5"
+                    name="location5"
+                  /> </span
+                >Member’s
+              </p>
             </td>
           </tr>
           <tr>
@@ -2881,6 +3168,12 @@
           This space is for any additional information you believe to be
           relevant. Additional pages may be attached if needed.
         </p>
+        <textarea
+          name="additional"
+          id="input_additional"
+          cols="40"
+          rows="10"
+        ></textarea>
         <table cellpadding="0" cellspacing="0" class="t10">
           <tr>
             <td class="tr13 td36">
@@ -2950,18 +3243,18 @@
           <tr>
             <td colspan="2" class="tr24 td128">
               <p class="p6 ft12">
-                <span class="ft11">Clinician: </span>PLEASE PRINT
+                <span class="ft11">Clinician: </span><input type="text" id="input_clinician1" class="left_input" name="clinician1" placeholder="PLEASE PRINT">
               </p>
             </td>
-            <td class="tr24 td129"><p class="p44 ft6">Signature:</p></td>
+            <td class="tr24 td129"><p class="p44 ft6">Signature:<input type="text" id="input_signature" class="input_footer" name="signature" readonly></p></td>
           </tr>
           <tr>
-            <td class="tr2 td130"><p class="p6 ft6">License #:</p></td>
-            <td class="tr0 td131"><p class="p6 ft9">&nbsp;</p></td>
-            <td class="tr2 td129"><p class="p44 ft11">Date:</p></td>
+            <td colspan="2" class="tr2 td130"><p class="p6 ft6">License #:<input type="text" id="input_license" class="left_input" name="license"></p></td>
+            <!-- <td class="tr0 td131"><p class="p6 ft9">&nbsp;</p></td> -->
+            <td class="tr2 td129"><p class="p44 ft11">Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="input_date" class="input_footer" name="date"></p></td>
           </tr>
           <tr>
-            <td class="tr2 td130"><p class="p6 ft11">NPI:</p></td>
+            <td class="tr2 td130"><p class="p6 ft11">NPI:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="input_license" class="left_input" name="license"></p></td>
             <td class="tr7 td132"><p class="p6 ft9">&nbsp;</p></td>
             <td class="tr2 td129"><p class="p6 ft9">&nbsp;</p></td>
           </tr>
